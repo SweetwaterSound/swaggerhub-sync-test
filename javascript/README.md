@@ -159,6 +159,6 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: implicit
-- **Authorization URL**: https://example.com/auth
+- **Authorization URL**: https://www.sweetwater.com/auth
 - **Scopes**: N/A
 
