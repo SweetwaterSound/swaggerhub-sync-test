@@ -3,7 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**ERRORUNKNOWN**](ERRORUNKNOWN.md) |  | [optional] 
+**id** | **Number** |  | 
+**sortIndex** | **Number** |  | 
+**note** | **String** |  | [optional] 
+**type** | **String** |  | 
 **idea** | **String** |  | 
 
 

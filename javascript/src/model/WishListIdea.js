@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ERRORUNKNOWN', 'model/WishListItem'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ERRORUNKNOWN'), require('./WishListItem'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.WishListApi) {
       root.WishListApi = {};
     }
-    root.WishListApi.WishListIdea = factory(root.WishListApi.ApiClient, root.WishListApi.ERRORUNKNOWN, root.WishListApi.WishListItem);
+    root.WishListApi.WishListIdea = factory(root.WishListApi.ApiClient);
   }
-}(this, function(ApiClient, ERRORUNKNOWN, WishListItem) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -45,16 +45,18 @@
    * A wish list item representing an idea
    * @alias module:model/WishListIdea
    * @class
-   * @extends module:model/WishListItem
    * @param id {Number} 
-   * @param type {module:model/ERRORUNKNOWN} 
    * @param sortIndex {Number} 
+   * @param type {String} 
    * @param idea {String} 
    */
-  var exports = function(id, type, sortIndex, idea) {
+  var exports = function(id, sortIndex, type, idea) {
     var _this = this;
-    WishListItem.call(_this, id, type, sortIndex);
 
+    _this['id'] = id;
+    _this['sort_index'] = sortIndex;
+
+    _this['type'] = type;
     _this['idea'] = idea;
   };
 
@@ -68,9 +70,18 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      WishListItem.constructFromObject(data, obj);
+
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      }
+      if (data.hasOwnProperty('sort_index')) {
+        obj['sort_index'] = ApiClient.convertToType(data['sort_index'], 'Number');
+      }
+      if (data.hasOwnProperty('note')) {
+        obj['note'] = ApiClient.convertToType(data['note'], 'String');
+      }
       if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], ERRORUNKNOWN);
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
       if (data.hasOwnProperty('idea')) {
         obj['idea'] = ApiClient.convertToType(data['idea'], 'String');
@@ -79,11 +90,20 @@
     return obj;
   }
 
-  exports.prototype = Object.create(WishListItem.prototype);
-  exports.prototype.constructor = exports;
-
   /**
-   * @member {module:model/ERRORUNKNOWN} type
+   * @member {Number} id
+   */
+  exports.prototype['id'] = undefined;
+  /**
+   * @member {Number} sort_index
+   */
+  exports.prototype['sort_index'] = undefined;
+  /**
+   * @member {String} note
+   */
+  exports.prototype['note'] = undefined;
+  /**
+   * @member {String} type
    */
   exports.prototype['type'] = undefined;
   /**

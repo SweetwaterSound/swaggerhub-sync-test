@@ -57,6 +57,24 @@
       //expect(instance).to.be.a(WishListApi.WishListIdea);
     });
 
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new WishListApi.WishListIdea();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sortIndex (base name: "sort_index")', function() {
+      // uncomment below and update the code to test the property sortIndex
+      //var instane = new WishListApi.WishListIdea();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property note (base name: "note")', function() {
+      // uncomment below and update the code to test the property note
+      //var instane = new WishListApi.WishListIdea();
+      //expect(instance).to.be();
+    });
+
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instane = new WishListApi.WishListIdea();
