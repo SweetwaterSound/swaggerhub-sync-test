@@ -1,0 +1,1 @@
+# swaggerhub-sync-test
