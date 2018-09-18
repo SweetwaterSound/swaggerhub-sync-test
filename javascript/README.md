@@ -95,6 +95,12 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var WishListApi = require('wish_list_api');
 
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = "YOUR ACCESS TOKEN"
+
 var api = new WishListApi.ListItemsApi()
 
 var listId = "listId_example"; // {String} 
@@ -148,5 +154,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
- All endpoints do not require authorization.
+
+### OAuth
+
+- **Type**: OAuth
+- **Flow**: implicit
+- **Authorization URL**: https://example.com/auth
+- **Scopes**: N/A
 

@@ -56,6 +56,7 @@
      * @type {Array.<String>}
      */
     this.authentications = {
+      'OAuth': {type: 'oauth2'}
     };
     /**
      * The default HTTP headers to be included for all API calls.

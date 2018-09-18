@@ -75,7 +75,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = InlineResponse200;

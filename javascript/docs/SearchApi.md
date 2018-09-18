@@ -18,6 +18,11 @@ Search for lists that contain a product
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.SearchApi();
 
@@ -43,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 

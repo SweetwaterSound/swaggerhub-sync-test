@@ -75,7 +75,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = InlineResponse2002;
@@ -133,7 +133,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
@@ -192,7 +192,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = InlineResponse2004;
@@ -254,7 +254,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = InlineResponse2003;
@@ -311,7 +311,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = InlineResponse2003;
@@ -368,7 +368,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = null;
@@ -425,7 +425,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
       var returnType = null;

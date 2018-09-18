@@ -22,6 +22,11 @@ Items for the specified list
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.ListItemsApi();
 
@@ -47,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -63,6 +68,11 @@ Delete a list item
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.ListItemsApi();
 
@@ -91,7 +101,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -107,6 +117,11 @@ Details for specified list item
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.ListItemsApi();
 
@@ -135,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -151,6 +166,11 @@ Update a list item
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.ListItemsApi();
 
@@ -183,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -199,6 +219,11 @@ Add an item to the list
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.ListItemsApi();
 
@@ -228,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -246,6 +271,11 @@ This endpoint accepts an array of wish list item IDs. The items will be re-sorte
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.ListItemsApi();
 
@@ -275,7 +305,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -291,6 +321,11 @@ Transfer items to a different list.
 ### Example
 ```javascript
 var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new WishListApi.ListItemsApi();
 
@@ -320,7 +355,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
