@@ -1,0 +1,520 @@
+---
+swagger: "2.0"
+info:
+  description: "A REST API to control wish lists"
+  version: "1.0.0"
+  title: "Wish List API"
+  contact:
+    email: "caleb_bertsch@sweetwater.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "virtserver.swaggerhub.com"
+basePath: "/sweetwater/wish-list/1.0.0"
+tags:
+- name: "Lists"
+  description: "Operations on Lists"
+- name: "List Items"
+  description: "Operations on List Items"
+- name: "Search"
+  description: "Filters Lists"
+schemes:
+- "https"
+security:
+- OAuth: []
+paths:
+  /lists:
+    get:
+      tags:
+      - "Lists"
+      summary: "All lists for a user"
+      parameters:
+      - name: "user_id"
+        in: "query"
+        description: "Filter lists to a user_id"
+        required: true
+        type: "integer"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                type: "array"
+                items:
+                  $ref: "#/definitions/WishList"
+    post:
+      tags:
+      - "Lists"
+      summary: "Create a list"
+      description: "Create a new wish list"
+      parameters:
+      - in: "body"
+        name: "list"
+        required: false
+        schema:
+          $ref: "#/definitions/WishListParameter"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                $ref: "#/definitions/WishList"
+  /lists/{listId}:
+    get:
+      tags:
+      - "Lists"
+      summary: "Details for the specified list"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                $ref: "#/definitions/WishList"
+    delete:
+      tags:
+      - "Lists"
+      summary: "Delete a list"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        204:
+          description: "Deleted"
+    patch:
+      tags:
+      - "Lists"
+      summary: "Update a list"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "list"
+        required: false
+        schema:
+          $ref: "#/definitions/WishListParameter"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                $ref: "#/definitions/WishList"
+  /lists/{listId}/items:
+    get:
+      tags:
+      - "List Items"
+      summary: "Items for the specified list"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                type: "array"
+                items:
+                  $ref: "#/definitions/WishListItem"
+    post:
+      tags:
+      - "List Items"
+      summary: "Add an item to the list"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "item"
+        required: false
+        schema:
+          $ref: "#/definitions/WishListItemParameter"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                $ref: "#/definitions/WishListItem"
+  /lists/{listId}/items/{listItemId}:
+    get:
+      tags:
+      - "List Items"
+      summary: "Details for specified list item"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "listItemId"
+        in: "path"
+        required: true
+        type: "number"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              item:
+                $ref: "#/definitions/WishListItem"
+    delete:
+      tags:
+      - "List Items"
+      summary: "Delete a list item"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "listItemId"
+        in: "path"
+        required: true
+        type: "number"
+      responses:
+        204:
+          description: "Deleted"
+    patch:
+      tags:
+      - "List Items"
+      summary: "Update a list item"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "listItemId"
+        in: "path"
+        required: true
+        type: "number"
+      - in: "body"
+        name: "list"
+        required: false
+        schema:
+          $ref: "#/definitions/WishListItemParameter"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                $ref: "#/definitions/WishListItem"
+  /lists/{listId}/items/sort:
+    post:
+      tags:
+      - "List Items"
+      summary: "Set the sort_index of all the items in a list"
+      description: "This endpoint accepts an array of wish list item IDs. The items\
+        \ will be re-sorted in the given order of their corresponding IDs."
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "items"
+        required: false
+        schema:
+          $ref: "#/definitions/items"
+      responses:
+        204:
+          description: "OK"
+  /lists/{listId}/items/transfer:
+    post:
+      tags:
+      - "List Items"
+      summary: "Transfer items to a different list."
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "transfer"
+        required: false
+        schema:
+          $ref: "#/definitions/ItemTransferRequest"
+      responses:
+        204:
+          description: "OK"
+  /search/product:
+    get:
+      tags:
+      - "Search"
+      description: "Search for lists that contain a product"
+      parameters:
+      - name: "itemid"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                type: "array"
+                items:
+                  $ref: "#/definitions/WishList"
+securityDefinitions:
+  OAuth:
+    type: "oauth2"
+    authorizationUrl: "https://www.sweetwater.com/auth"
+    flow: "implicit"
+definitions:
+  WishListParameter:
+    type: "object"
+    required:
+    - "name"
+    properties:
+      user_id:
+        type: "integer"
+        example: 40005
+      name:
+        type: "string"
+        example: "Guitars I want"
+      is_default:
+        type: "boolean"
+        example: true
+    example:
+      user_id: 40005
+      name: "Guitars I want"
+      is_default: true
+  WishList:
+    allOf:
+    - $ref: "#/definitions/WishListParameter"
+    - type: "object"
+      required:
+      - "id"
+      - "token"
+      discriminator: "type"
+      properties:
+        id:
+          type: "integer"
+          format: "int32"
+          example: 1005000
+          minimum: 1
+        token:
+          type: "string"
+          example: "79437f5edda13f9c0669b978dd7a9066dd2059f1"
+        items_count:
+          type: "integer"
+          example: 4
+  WishListItemParameter:
+    type: "object"
+    required:
+    - "type"
+    properties:
+      type:
+        type: "string"
+        enum:
+        - "product"
+        - "idea"
+      note:
+        type: "string"
+        example: "I need something with a switch"
+      idea:
+        type: "string"
+        example: "Microphone"
+      itemid:
+        type: "string"
+        example: "SM58S"
+    example:
+      note: "I need something with a switch"
+      itemid: "SM58S"
+      idea: "Microphone"
+      type: "product"
+  WishListItem:
+    type: "object"
+    required:
+    - "id"
+    - "sort_index"
+    - "type"
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        example: 200050000
+        minimum: 1
+      type:
+        type: "string"
+      sort_index:
+        type: "integer"
+        format: "int32"
+        example: 0
+        minimum: 0
+      note:
+        type: "string"
+        example: "The microphone I want"
+    example:
+      note: "The microphone I want"
+      id: 200050000
+      sort_index: 0
+      type: "type"
+  WishListProduct:
+    type: "object"
+    required:
+    - "id"
+    - "itemid"
+    - "sort_index"
+    - "type"
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        example: 200050000
+        minimum: 1
+      sort_index:
+        type: "integer"
+        format: "int32"
+        example: 0
+        minimum: 0
+      note:
+        type: "string"
+        example: "The microphone I want"
+      type:
+        type: "string"
+        example: "product"
+      itemid:
+        type: "string"
+        example: "SM57"
+    description: "A wish list item representing a product"
+  WishListIdea:
+    type: "object"
+    required:
+    - "id"
+    - "idea"
+    - "sort_index"
+    - "type"
+    properties:
+      id:
+        type: "integer"
+        format: "int32"
+        example: 200050000
+        minimum: 1
+      sort_index:
+        type: "integer"
+        format: "int32"
+        example: 0
+        minimum: 0
+      note:
+        type: "string"
+        example: "The microphone I want"
+      type:
+        type: "string"
+        example: "idea"
+      idea:
+        type: "string"
+        example: "Stuff and things"
+    description: "A wish list item representing an idea"
+  ItemTransferRequest:
+    type: "object"
+    required:
+    - "target_list_id"
+    - "transfer_type"
+    properties:
+      target_list_id:
+        type: "integer"
+        example: 20
+      transfer_type:
+        type: "string"
+        example: "specific"
+        enum:
+        - "all"
+        - "specific"
+      item_ids:
+        type: "array"
+        example:
+        - 100
+        - 101
+        - 102
+        items:
+          type: "integer"
+    example:
+      target_list_id: 20
+      item_ids:
+      - 100
+      - 101
+      - 102
+      transfer_type: "specific"
+  inline_response_200:
+    properties:
+      data:
+        type: "array"
+        items:
+          $ref: "#/definitions/WishList"
+    example:
+      data:
+      - ""
+      - ""
+  inline_response_200_1:
+    properties:
+      data:
+        $ref: "#/definitions/WishList"
+    example:
+      data: ""
+  inline_response_200_2:
+    properties:
+      data:
+        type: "array"
+        items:
+          $ref: "#/definitions/WishListItem"
+    example:
+      data:
+      - note: "The microphone I want"
+        id: 200050000
+        sort_index: 0
+        type: "type"
+      - note: "The microphone I want"
+        id: 200050000
+        sort_index: 0
+        type: "type"
+  inline_response_200_3:
+    properties:
+      data:
+        $ref: "#/definitions/WishListItem"
+    example:
+      data:
+        note: "The microphone I want"
+        id: 200050000
+        sort_index: 0
+        type: "type"
+  inline_response_200_4:
+    properties:
+      item:
+        $ref: "#/definitions/WishListItem"
+    example:
+      item:
+        note: "The microphone I want"
+        id: 200050000
+        sort_index: 0
+        type: "type"
+  items:
+    type: "object"
+    properties:
+      item_ids:
+        type: "integer"
+        example: ""
