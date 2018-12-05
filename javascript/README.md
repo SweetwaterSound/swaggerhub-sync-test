@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 *WishListApi.ListsApi* | [**listsListIdDelete**](docs/ListsApi.md#listsListIdDelete) | **DELETE** /lists/{listId} | Delete a list
 *WishListApi.ListsApi* | [**listsListIdGet**](docs/ListsApi.md#listsListIdGet) | **GET** /lists/{listId} | Details for the specified list
 *WishListApi.ListsApi* | [**listsListIdPatch**](docs/ListsApi.md#listsListIdPatch) | **PATCH** /lists/{listId} | Update a list
+*WishListApi.ListsApi* | [**listsListIdRestorePost**](docs/ListsApi.md#listsListIdRestorePost) | **POST** /lists/{listId}/restore | Restore a deleted list
 *WishListApi.ListsApi* | [**listsPost**](docs/ListsApi.md#listsPost) | **POST** /lists | Create a list
 *WishListApi.SearchApi* | [**searchProductGet**](docs/SearchApi.md#searchProductGet) | **GET** /search/product | 
 

@@ -259,6 +259,57 @@
 
 
     /**
+     * Restore a deleted list
+     * @param {String} listId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.listsListIdRestorePostWithHttpInfo = function(listId) {
+      var postBody = null;
+
+      // verify the required parameter 'listId' is set
+      if (listId === undefined || listId === null) {
+        throw new Error("Missing the required parameter 'listId' when calling listsListIdRestorePost");
+      }
+
+
+      var pathParams = {
+        'listId': listId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['OAuth'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/lists/{listId}/restore', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Restore a deleted list
+     * @param {String} listId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.listsListIdRestorePost = function(listId) {
+      return this.listsListIdRestorePostWithHttpInfo(listId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create a list
      * Create a new wish list
      * @param {Object} opts Optional parameters

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**listsListIdDelete**](ListsApi.md#listsListIdDelete) | **DELETE** /lists/{listId} | Delete a list
 [**listsListIdGet**](ListsApi.md#listsListIdGet) | **GET** /lists/{listId} | Details for the specified list
 [**listsListIdPatch**](ListsApi.md#listsListIdPatch) | **PATCH** /lists/{listId} | Update a list
+[**listsListIdRestorePost**](ListsApi.md#listsListIdRestorePost) | **POST** /lists/{listId}/restore | Restore a deleted list
 [**listsPost**](ListsApi.md#listsPost) | **POST** /lists | Create a list
 
 
@@ -189,6 +190,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[OAuth](../README.md#OAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="listsListIdRestorePost"></a>
+# **listsListIdRestorePost**
+> listsListIdRestorePost(listId)
+
+Restore a deleted list
+
+### Example
+```javascript
+var WishListApi = require('wish_list_api');
+var defaultClient = WishListApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth
+var OAuth = defaultClient.authentications['OAuth'];
+OAuth.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new WishListApi.ListsApi();
+
+var listId = "listId_example"; // String | 
+
+apiInstance.listsListIdRestorePost(listId).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listId** | **String**|  | 
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 

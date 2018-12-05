@@ -91,6 +91,16 @@
         done();
       });
     });
+    describe('listsListIdRestorePost', function() {
+      it('should call listsListIdRestorePost successfully', function(done) {
+        //uncomment below and update the code to test listsListIdRestorePost
+        //instance.listsListIdRestorePost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listsPost', function() {
       it('should call listsPost successfully', function(done) {
         //uncomment below and update the code to test listsPost
