@@ -128,6 +128,11 @@ paths:
       responses:
         200:
           description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                $ref: "#/definitions/WishList"
   /lists/{listId}/items:
     get:
       tags:
@@ -190,7 +195,7 @@ paths:
           schema:
             type: "object"
             properties:
-              item:
+              data:
                 $ref: "#/definitions/WishListItem"
     delete:
       tags:
@@ -226,6 +231,28 @@ paths:
         required: false
         schema:
           $ref: "#/definitions/WishListItemParameter"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "object"
+            properties:
+              data:
+                $ref: "#/definitions/WishListItem"
+  /lists/{listId}/items/{listItemId}/restore:
+    post:
+      tags:
+      - "Lists"
+      summary: "Restore a deleted list"
+      parameters:
+      - name: "listId"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "listItemId"
+        in: "path"
+        required: true
+        type: "number"
       responses:
         200:
           description: "OK"
@@ -511,16 +538,6 @@ definitions:
         $ref: "#/definitions/WishListItem"
     example:
       data:
-        note: "The microphone I want"
-        id: 200050000
-        sort_index: 0
-        type: "type"
-  inline_response_200_4:
-    properties:
-      item:
-        $ref: "#/definitions/WishListItem"
-    example:
-      item:
         note: "The microphone I want"
         id: 200050000
         sort_index: 0
