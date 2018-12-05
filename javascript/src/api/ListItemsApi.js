@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/ItemTransferRequest', 'model/Items', 'model/WishListItemParameter'], factory);
+    define(['ApiClient', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/ItemTransferRequest', 'model/Items', 'model/WishListItemParameter'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/ItemTransferRequest'), require('../model/Items'), require('../model/WishListItemParameter'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponse2003'), require('../model/ItemTransferRequest'), require('../model/Items'), require('../model/WishListItemParameter'));
   } else {
     // Browser globals (root is window)
     if (!root.WishListApi) {
       root.WishListApi = {};
     }
-    root.WishListApi.ListItemsApi = factory(root.WishListApi.ApiClient, root.WishListApi.InlineResponse2002, root.WishListApi.InlineResponse2003, root.WishListApi.InlineResponse2004, root.WishListApi.ItemTransferRequest, root.WishListApi.Items, root.WishListApi.WishListItemParameter);
+    root.WishListApi.ListItemsApi = factory(root.WishListApi.ApiClient, root.WishListApi.InlineResponse2002, root.WishListApi.InlineResponse2003, root.WishListApi.ItemTransferRequest, root.WishListApi.Items, root.WishListApi.WishListItemParameter);
   }
-}(this, function(ApiClient, InlineResponse2002, InlineResponse2003, InlineResponse2004, ItemTransferRequest, Items, WishListItemParameter) {
+}(this, function(ApiClient, InlineResponse2002, InlineResponse2003, ItemTransferRequest, Items, WishListItemParameter) {
   'use strict';
 
   /**
@@ -163,7 +163,7 @@
      * Details for specified list item
      * @param {String} listId 
      * @param {Number} listItemId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     this.listsListIdItemsListItemIdGetWithHttpInfo = function(listId, listItemId) {
       var postBody = null;
@@ -195,7 +195,7 @@
       var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
-      var returnType = InlineResponse2004;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/lists/{listId}/items/{listItemId}', 'GET',
@@ -208,7 +208,7 @@
      * Details for specified list item
      * @param {String} listId 
      * @param {Number} listItemId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     this.listsListIdItemsListItemIdGet = function(listId, listItemId) {
       return this.listsListIdItemsListItemIdGetWithHttpInfo(listId, listItemId)

@@ -130,6 +130,7 @@ Class | Method | HTTP request | Description
 *WishListApi.ListsApi* | [**listsGet**](docs/ListsApi.md#listsGet) | **GET** /lists | All lists for a user
 *WishListApi.ListsApi* | [**listsListIdDelete**](docs/ListsApi.md#listsListIdDelete) | **DELETE** /lists/{listId} | Delete a list
 *WishListApi.ListsApi* | [**listsListIdGet**](docs/ListsApi.md#listsListIdGet) | **GET** /lists/{listId} | Details for the specified list
+*WishListApi.ListsApi* | [**listsListIdItemsListItemIdRestorePost**](docs/ListsApi.md#listsListIdItemsListItemIdRestorePost) | **POST** /lists/{listId}/items/{listItemId}/restore | Restore a deleted list
 *WishListApi.ListsApi* | [**listsListIdPatch**](docs/ListsApi.md#listsListIdPatch) | **PATCH** /lists/{listId} | Update a list
 *WishListApi.ListsApi* | [**listsListIdRestorePost**](docs/ListsApi.md#listsListIdRestorePost) | **POST** /lists/{listId}/restore | Restore a deleted list
 *WishListApi.ListsApi* | [**listsPost**](docs/ListsApi.md#listsPost) | **POST** /lists | Create a list
@@ -142,7 +143,6 @@ Class | Method | HTTP request | Description
  - [WishListApi.InlineResponse2001](docs/InlineResponse2001.md)
  - [WishListApi.InlineResponse2002](docs/InlineResponse2002.md)
  - [WishListApi.InlineResponse2003](docs/InlineResponse2003.md)
- - [WishListApi.InlineResponse2004](docs/InlineResponse2004.md)
  - [WishListApi.ItemTransferRequest](docs/ItemTransferRequest.md)
  - [WishListApi.Items](docs/Items.md)
  - [WishListApi.WishList](docs/WishList.md)

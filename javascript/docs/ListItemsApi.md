@@ -110,7 +110,7 @@ null (empty response body)
 
 <a name="listsListIdItemsListItemIdGet"></a>
 # **listsListIdItemsListItemIdGet**
-> InlineResponse2004 listsListIdItemsListItemIdGet(listId, listItemId)
+> InlineResponse2003 listsListIdItemsListItemIdGet(listId, listItemId)
 
 Details for specified list item
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

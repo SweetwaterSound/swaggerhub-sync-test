@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/WishListParameter'], factory);
+    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2003', 'model/WishListParameter'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/WishListParameter'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/InlineResponse2003'), require('../model/WishListParameter'));
   } else {
     // Browser globals (root is window)
     if (!root.WishListApi) {
       root.WishListApi = {};
     }
-    root.WishListApi.ListsApi = factory(root.WishListApi.ApiClient, root.WishListApi.InlineResponse200, root.WishListApi.InlineResponse2001, root.WishListApi.WishListParameter);
+    root.WishListApi.ListsApi = factory(root.WishListApi.ApiClient, root.WishListApi.InlineResponse200, root.WishListApi.InlineResponse2001, root.WishListApi.InlineResponse2003, root.WishListApi.WishListParameter);
   }
-}(this, function(ApiClient, InlineResponse200, InlineResponse2001, WishListParameter) {
+}(this, function(ApiClient, InlineResponse200, InlineResponse2001, InlineResponse2003, WishListParameter) {
   'use strict';
 
   /**
@@ -203,6 +203,65 @@
 
 
     /**
+     * Restore a deleted list
+     * @param {String} listId 
+     * @param {Number} listItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     */
+    this.listsListIdItemsListItemIdRestorePostWithHttpInfo = function(listId, listItemId) {
+      var postBody = null;
+
+      // verify the required parameter 'listId' is set
+      if (listId === undefined || listId === null) {
+        throw new Error("Missing the required parameter 'listId' when calling listsListIdItemsListItemIdRestorePost");
+      }
+
+      // verify the required parameter 'listItemId' is set
+      if (listItemId === undefined || listItemId === null) {
+        throw new Error("Missing the required parameter 'listItemId' when calling listsListIdItemsListItemIdRestorePost");
+      }
+
+
+      var pathParams = {
+        'listId': listId,
+        'listItemId': listItemId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['OAuth'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = InlineResponse2003;
+
+      return this.apiClient.callApi(
+        '/lists/{listId}/items/{listItemId}/restore', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Restore a deleted list
+     * @param {String} listId 
+     * @param {Number} listItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     */
+    this.listsListIdItemsListItemIdRestorePost = function(listId, listItemId) {
+      return this.listsListIdItemsListItemIdRestorePostWithHttpInfo(listId, listItemId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update a list
      * @param {String} listId 
      * @param {Object} opts Optional parameters
@@ -261,7 +320,7 @@
     /**
      * Restore a deleted list
      * @param {String} listId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
     this.listsListIdRestorePostWithHttpInfo = function(listId) {
       var postBody = null;
@@ -287,7 +346,7 @@
       var authNames = ['OAuth'];
       var contentTypes = [];
       var accepts = [];
-      var returnType = null;
+      var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
         '/lists/{listId}/restore', 'POST',
@@ -299,7 +358,7 @@
     /**
      * Restore a deleted list
      * @param {String} listId 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
     this.listsListIdRestorePost = function(listId) {
       return this.listsListIdRestorePostWithHttpInfo(listId)

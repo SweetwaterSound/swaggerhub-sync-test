@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/ItemTransferRequest', 'model/Items', 'model/WishList', 'model/WishListIdea', 'model/WishListItem', 'model/WishListItemParameter', 'model/WishListParameter', 'model/WishListProduct', 'api/ListItemsApi', 'api/ListsApi', 'api/SearchApi'], factory);
+    define(['ApiClient', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/ItemTransferRequest', 'model/Items', 'model/WishList', 'model/WishListIdea', 'model/WishListItem', 'model/WishListItemParameter', 'model/WishListParameter', 'model/WishListProduct', 'api/ListItemsApi', 'api/ListsApi', 'api/SearchApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse2002'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/ItemTransferRequest'), require('./model/Items'), require('./model/WishList'), require('./model/WishListIdea'), require('./model/WishListItem'), require('./model/WishListItemParameter'), require('./model/WishListParameter'), require('./model/WishListProduct'), require('./api/ListItemsApi'), require('./api/ListsApi'), require('./api/SearchApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse2002'), require('./model/InlineResponse2003'), require('./model/ItemTransferRequest'), require('./model/Items'), require('./model/WishList'), require('./model/WishListIdea'), require('./model/WishListItem'), require('./model/WishListItemParameter'), require('./model/WishListParameter'), require('./model/WishListProduct'), require('./api/ListItemsApi'), require('./api/ListsApi'), require('./api/SearchApi'));
   }
-}(function(ApiClient, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2003, InlineResponse2004, ItemTransferRequest, Items, WishList, WishListIdea, WishListItem, WishListItemParameter, WishListParameter, WishListProduct, ListItemsApi, ListsApi, SearchApi) {
+}(function(ApiClient, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2003, ItemTransferRequest, Items, WishList, WishListIdea, WishListItem, WishListItemParameter, WishListParameter, WishListProduct, ListItemsApi, ListsApi, SearchApi) {
   'use strict';
 
   /**
@@ -82,11 +82,6 @@
      * @property {module:model/InlineResponse2003}
      */
     InlineResponse2003: InlineResponse2003,
-    /**
-     * The InlineResponse2004 model constructor.
-     * @property {module:model/InlineResponse2004}
-     */
-    InlineResponse2004: InlineResponse2004,
     /**
      * The ItemTransferRequest model constructor.
      * @property {module:model/ItemTransferRequest}

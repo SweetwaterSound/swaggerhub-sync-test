@@ -81,6 +81,16 @@
         done();
       });
     });
+    describe('listsListIdItemsListItemIdRestorePost', function() {
+      it('should call listsListIdItemsListItemIdRestorePost successfully', function(done) {
+        //uncomment below and update the code to test listsListIdItemsListItemIdRestorePost
+        //instance.listsListIdItemsListItemIdRestorePost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listsListIdPatch', function() {
       it('should call listsListIdPatch successfully', function(done) {
         //uncomment below and update the code to test listsListIdPatch
