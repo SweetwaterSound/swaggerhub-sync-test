@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**listsGet**](ListsApi.md#listsGet) | **GET** /lists | All lists for a user
 [**listsListIdDelete**](ListsApi.md#listsListIdDelete) | **DELETE** /lists/{listId} | Delete a list
 [**listsListIdGet**](ListsApi.md#listsListIdGet) | **GET** /lists/{listId} | Details for the specified list
-[**listsListIdItemsListItemIdRestorePost**](ListsApi.md#listsListIdItemsListItemIdRestorePost) | **POST** /lists/{listId}/items/{listItemId}/restore | Restore a deleted list
 [**listsListIdPatch**](ListsApi.md#listsListIdPatch) | **PATCH** /lists/{listId} | Update a list
 [**listsListIdRestorePost**](ListsApi.md#listsListIdRestorePost) | **POST** /lists/{listId}/restore | Restore a deleted list
 [**listsPost**](ListsApi.md#listsPost) | **POST** /lists | Create a list
@@ -141,55 +140,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2001**](InlineResponse2001.md)
-
-### Authorization
-
-[OAuth](../README.md#OAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="listsListIdItemsListItemIdRestorePost"></a>
-# **listsListIdItemsListItemIdRestorePost**
-> InlineResponse2003 listsListIdItemsListItemIdRestorePost(listId, listItemId)
-
-Restore a deleted list
-
-### Example
-```javascript
-var WishListApi = require('wish_list_api');
-var defaultClient = WishListApi.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth
-var OAuth = defaultClient.authentications['OAuth'];
-OAuth.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new WishListApi.ListsApi();
-
-var listId = "listId_example"; // String | 
-
-var listItemId = 8.14; // Number | 
-
-apiInstance.listsListIdItemsListItemIdRestorePost(listId, listItemId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **listId** | **String**|  | 
- **listItemId** | **Number**|  | 
-
-### Return type
-
-[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 

@@ -283,6 +283,65 @@
 
 
     /**
+     * Restore a deleted list
+     * @param {String} listId 
+     * @param {Number} listItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     */
+    this.listsListIdItemsListItemIdRestorePostWithHttpInfo = function(listId, listItemId) {
+      var postBody = null;
+
+      // verify the required parameter 'listId' is set
+      if (listId === undefined || listId === null) {
+        throw new Error("Missing the required parameter 'listId' when calling listsListIdItemsListItemIdRestorePost");
+      }
+
+      // verify the required parameter 'listItemId' is set
+      if (listItemId === undefined || listItemId === null) {
+        throw new Error("Missing the required parameter 'listItemId' when calling listsListIdItemsListItemIdRestorePost");
+      }
+
+
+      var pathParams = {
+        'listId': listId,
+        'listItemId': listItemId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['OAuth'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = InlineResponse2003;
+
+      return this.apiClient.callApi(
+        '/lists/{listId}/items/{listItemId}/restore', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Restore a deleted list
+     * @param {String} listId 
+     * @param {Number} listItemId 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     */
+    this.listsListIdItemsListItemIdRestorePost = function(listId, listItemId) {
+      return this.listsListIdItemsListItemIdRestorePostWithHttpInfo(listId, listItemId)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Add an item to the list
      * @param {String} listId 
      * @param {Object} opts Optional parameters

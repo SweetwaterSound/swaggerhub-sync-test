@@ -91,6 +91,16 @@
         done();
       });
     });
+    describe('listsListIdItemsListItemIdRestorePost', function() {
+      it('should call listsListIdItemsListItemIdRestorePost successfully', function(done) {
+        //uncomment below and update the code to test listsListIdItemsListItemIdRestorePost
+        //instance.listsListIdItemsListItemIdRestorePost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listsListIdItemsPost', function() {
       it('should call listsListIdItemsPost successfully', function(done) {
         //uncomment below and update the code to test listsListIdItemsPost

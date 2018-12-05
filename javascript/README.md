@@ -124,13 +124,13 @@ Class | Method | HTTP request | Description
 *WishListApi.ListItemsApi* | [**listsListIdItemsListItemIdDelete**](docs/ListItemsApi.md#listsListIdItemsListItemIdDelete) | **DELETE** /lists/{listId}/items/{listItemId} | Delete a list item
 *WishListApi.ListItemsApi* | [**listsListIdItemsListItemIdGet**](docs/ListItemsApi.md#listsListIdItemsListItemIdGet) | **GET** /lists/{listId}/items/{listItemId} | Details for specified list item
 *WishListApi.ListItemsApi* | [**listsListIdItemsListItemIdPatch**](docs/ListItemsApi.md#listsListIdItemsListItemIdPatch) | **PATCH** /lists/{listId}/items/{listItemId} | Update a list item
+*WishListApi.ListItemsApi* | [**listsListIdItemsListItemIdRestorePost**](docs/ListItemsApi.md#listsListIdItemsListItemIdRestorePost) | **POST** /lists/{listId}/items/{listItemId}/restore | Restore a deleted list
 *WishListApi.ListItemsApi* | [**listsListIdItemsPost**](docs/ListItemsApi.md#listsListIdItemsPost) | **POST** /lists/{listId}/items | Add an item to the list
 *WishListApi.ListItemsApi* | [**listsListIdItemsSortPost**](docs/ListItemsApi.md#listsListIdItemsSortPost) | **POST** /lists/{listId}/items/sort | Set the sort_index of all the items in a list
 *WishListApi.ListItemsApi* | [**listsListIdItemsTransferPost**](docs/ListItemsApi.md#listsListIdItemsTransferPost) | **POST** /lists/{listId}/items/transfer | Transfer items to a different list.
 *WishListApi.ListsApi* | [**listsGet**](docs/ListsApi.md#listsGet) | **GET** /lists | All lists for a user
 *WishListApi.ListsApi* | [**listsListIdDelete**](docs/ListsApi.md#listsListIdDelete) | **DELETE** /lists/{listId} | Delete a list
 *WishListApi.ListsApi* | [**listsListIdGet**](docs/ListsApi.md#listsListIdGet) | **GET** /lists/{listId} | Details for the specified list
-*WishListApi.ListsApi* | [**listsListIdItemsListItemIdRestorePost**](docs/ListsApi.md#listsListIdItemsListItemIdRestorePost) | **POST** /lists/{listId}/items/{listItemId}/restore | Restore a deleted list
 *WishListApi.ListsApi* | [**listsListIdPatch**](docs/ListsApi.md#listsListIdPatch) | **PATCH** /lists/{listId} | Update a list
 *WishListApi.ListsApi* | [**listsListIdRestorePost**](docs/ListsApi.md#listsListIdRestorePost) | **POST** /lists/{listId}/restore | Restore a deleted list
 *WishListApi.ListsApi* | [**listsPost**](docs/ListsApi.md#listsPost) | **POST** /lists | Create a list
