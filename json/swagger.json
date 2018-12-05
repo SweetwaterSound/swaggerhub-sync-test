@@ -154,6 +154,23 @@
         }
       }
     },
+    "/lists/{listId}/restore" : {
+      "post" : {
+        "tags" : [ "Lists" ],
+        "summary" : "Restore a deleted list",
+        "parameters" : [ {
+          "name" : "listId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK"
+          }
+        }
+      }
+    },
     "/lists/{listId}/items" : {
       "get" : {
         "tags" : [ "List Items" ],
