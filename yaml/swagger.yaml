@@ -242,7 +242,7 @@ paths:
   /lists/{listId}/items/{listItemId}/restore:
     post:
       tags:
-      - "Lists"
+      - "List Items"
       summary: "Restore a deleted list"
       parameters:
       - name: "listId"
