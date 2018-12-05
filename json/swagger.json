@@ -166,7 +166,15 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "OK"
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "data" : {
+                  "$ref" : "#/definitions/WishList"
+                }
+              }
+            }
           }
         }
       }
@@ -250,7 +258,7 @@
             "schema" : {
               "type" : "object",
               "properties" : {
-                "item" : {
+                "data" : {
                   "$ref" : "#/definitions/WishListItem"
                 }
               }
@@ -298,6 +306,36 @@
           "schema" : {
             "$ref" : "#/definitions/WishListItemParameter"
           }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "data" : {
+                  "$ref" : "#/definitions/WishListItem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lists/{listId}/items/{listItemId}/restore" : {
+      "post" : {
+        "tags" : [ "Lists" ],
+        "summary" : "Restore a deleted list",
+        "parameters" : [ {
+          "name" : "listId",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "listItemId",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
         } ],
         "responses" : {
           "200" : {
@@ -650,21 +688,6 @@
       },
       "example" : {
         "data" : {
-          "note" : "The microphone I want",
-          "id" : 200050000,
-          "sort_index" : 0,
-          "type" : "type"
-        }
-      }
-    },
-    "inline_response_200_4" : {
-      "properties" : {
-        "item" : {
-          "$ref" : "#/definitions/WishListItem"
-        }
-      },
-      "example" : {
-        "item" : {
           "note" : "The microphone I want",
           "id" : 200050000,
           "sort_index" : 0,
