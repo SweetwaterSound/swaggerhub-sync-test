@@ -188,6 +188,12 @@
           "in" : "path",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "enum" : [ "date_added", "brand", "price_high", "price_low", "priority" ]
         } ],
         "responses" : {
           "200" : {
@@ -214,6 +220,12 @@
           "in" : "path",
           "required" : true,
           "type" : "string"
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "enum" : [ "date_added", "brand", "price_high", "price_low", "priority" ]
         }, {
           "in" : "body",
           "name" : "item",
@@ -454,11 +466,6 @@
           "type" : "boolean",
           "example" : true
         }
-      },
-      "example" : {
-        "user_id" : 40005,
-        "name" : "Guitars I want",
-        "is_default" : true
       }
     },
     "WishList" : {
@@ -506,12 +513,6 @@
           "type" : "string",
           "example" : "SM58S"
         }
-      },
-      "example" : {
-        "note" : "I need something with a switch",
-        "itemid" : "SM58S",
-        "idea" : "Microphone",
-        "type" : "product"
       }
     },
     "WishListItem" : {
@@ -537,12 +538,6 @@
           "type" : "string",
           "example" : "The microphone I want"
         }
-      },
-      "example" : {
-        "note" : "The microphone I want",
-        "id" : 200050000,
-        "sort_index" : 0,
-        "type" : "type"
       }
     },
     "WishListProduct" : {
@@ -627,11 +622,6 @@
             "type" : "integer"
           }
         }
-      },
-      "example" : {
-        "target_list_id" : 20,
-        "item_ids" : [ 100, 101, 102 ],
-        "transfer_type" : "specific"
       }
     },
     "inline_response_200" : {
@@ -642,9 +632,6 @@
             "$ref" : "#/definitions/WishList"
           }
         }
-      },
-      "example" : {
-        "data" : [ "", "" ]
       }
     },
     "inline_response_200_1" : {
@@ -652,9 +639,6 @@
         "data" : {
           "$ref" : "#/definitions/WishList"
         }
-      },
-      "example" : {
-        "data" : ""
       }
     },
     "inline_response_200_2" : {
@@ -665,33 +649,12 @@
             "$ref" : "#/definitions/WishListItem"
           }
         }
-      },
-      "example" : {
-        "data" : [ {
-          "note" : "The microphone I want",
-          "id" : 200050000,
-          "sort_index" : 0,
-          "type" : "type"
-        }, {
-          "note" : "The microphone I want",
-          "id" : 200050000,
-          "sort_index" : 0,
-          "type" : "type"
-        } ]
       }
     },
     "inline_response_200_3" : {
       "properties" : {
         "data" : {
           "$ref" : "#/definitions/WishListItem"
-        }
-      },
-      "example" : {
-        "data" : {
-          "note" : "The microphone I want",
-          "id" : 200050000,
-          "sort_index" : 0,
-          "type" : "type"
         }
       }
     },
