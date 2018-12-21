@@ -191,6 +191,7 @@
         }, {
           "name" : "sort",
           "in" : "query",
+          "description" : "Available values : date_added, brand, price_high, price_low, priority",
           "required" : false,
           "type" : "string",
           "enum" : [ "date_added", "brand", "price_high", "price_low", "priority" ]
@@ -223,6 +224,7 @@
         }, {
           "name" : "sort",
           "in" : "query",
+          "description" : "Available values : date_added, brand, price_high, price_low, priority",
           "required" : false,
           "type" : "string",
           "enum" : [ "date_added", "brand", "price_high", "price_low", "priority" ]
