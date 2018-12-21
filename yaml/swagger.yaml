@@ -145,6 +145,8 @@ paths:
         type: string
       - name: sort
         in: query
+        description: 'Available values : date_added, brand, price_high, price_low,
+          priority'
         required: false
         type: string
         enum:
@@ -174,6 +176,8 @@ paths:
         type: string
       - name: sort
         in: query
+        description: 'Available values : date_added, brand, price_high, price_low,
+          priority'
         required: false
         type: string
         enum:
