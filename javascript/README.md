@@ -105,7 +105,10 @@ var api = new WishListApi.ListItemsApi()
 
 var listId = "listId_example"; // {String} 
 
-api.listsListIdItemsGet(listId).then(function(data) {
+var opts = { 
+  'sort': "sort_example", // {String} 
+};
+api.listsListIdItemsGet(listId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);

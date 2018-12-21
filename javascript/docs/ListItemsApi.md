@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="listsListIdItemsGet"></a>
 # **listsListIdItemsGet**
-> InlineResponse2002 listsListIdItemsGet(listId)
+> InlineResponse2002 listsListIdItemsGet(listId, opts)
 
 Items for the specified list
 
@@ -33,7 +33,10 @@ var apiInstance = new WishListApi.ListItemsApi();
 
 var listId = "listId_example"; // String | 
 
-apiInstance.listsListIdItemsGet(listId).then(function(data) {
+var opts = { 
+  'sort': "sort_example", // String | 
+};
+apiInstance.listsListIdItemsGet(listId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -46,6 +49,7 @@ apiInstance.listsListIdItemsGet(listId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **String**|  | 
+ **sort** | **String**|  | [optional] 
 
 ### Return type
 
@@ -280,6 +284,7 @@ var apiInstance = new WishListApi.ListItemsApi();
 var listId = "listId_example"; // String | 
 
 var opts = { 
+  'sort': "sort_example", // String | 
   'item': new WishListApi.WishListItemParameter() // WishListItemParameter | 
 };
 apiInstance.listsListIdItemsPost(listId, opts).then(function(data) {
@@ -295,6 +300,7 @@ apiInstance.listsListIdItemsPost(listId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **String**|  | 
+ **sort** | **String**|  | [optional] 
  **item** | [**WishListItemParameter**](WishListItemParameter.md)|  | [optional] 
 
 ### Return type
