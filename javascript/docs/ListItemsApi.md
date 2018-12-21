@@ -34,7 +34,7 @@ var apiInstance = new WishListApi.ListItemsApi();
 var listId = "listId_example"; // String | 
 
 var opts = { 
-  'sort': "sort_example", // String | 
+  'sort': "sort_example", // String | Available values : date_added, brand, price_high, price_low, priority
 };
 apiInstance.listsListIdItemsGet(listId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -49,7 +49,7 @@ apiInstance.listsListIdItemsGet(listId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **String**|  | 
- **sort** | **String**|  | [optional] 
+ **sort** | **String**| Available values : date_added, brand, price_high, price_low, priority | [optional] 
 
 ### Return type
 
@@ -284,7 +284,7 @@ var apiInstance = new WishListApi.ListItemsApi();
 var listId = "listId_example"; // String | 
 
 var opts = { 
-  'sort': "sort_example", // String | 
+  'sort': "sort_example", // String | Available values : date_added, brand, price_high, price_low, priority
   'item': new WishListApi.WishListItemParameter() // WishListItemParameter | 
 };
 apiInstance.listsListIdItemsPost(listId, opts).then(function(data) {
@@ -300,7 +300,7 @@ apiInstance.listsListIdItemsPost(listId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listId** | **String**|  | 
- **sort** | **String**|  | [optional] 
+ **sort** | **String**| Available values : date_added, brand, price_high, price_low, priority | [optional] 
  **item** | [**WishListItemParameter**](WishListItemParameter.md)|  | [optional] 
 
 ### Return type

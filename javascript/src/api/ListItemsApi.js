@@ -53,7 +53,7 @@
      * Items for the specified list
      * @param {String} listId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.sort 
+     * @param {module:model/String} opts.sort Available values : date_added, brand, price_high, price_low, priority
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     this.listsListIdItemsGetWithHttpInfo = function(listId, opts) {
@@ -95,7 +95,7 @@
      * Items for the specified list
      * @param {String} listId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.sort 
+     * @param {module:model/String} opts.sort Available values : date_added, brand, price_high, price_low, priority
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     this.listsListIdItemsGet = function(listId, opts) {
@@ -351,7 +351,7 @@
      * Add an item to the list
      * @param {String} listId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.sort 
+     * @param {module:model/String} opts.sort Available values : date_added, brand, price_high, price_low, priority
      * @param {module:model/WishListItemParameter} opts.item 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
@@ -394,7 +394,7 @@
      * Add an item to the list
      * @param {String} listId 
      * @param {Object} opts Optional parameters
-     * @param {module:model/String} opts.sort 
+     * @param {module:model/String} opts.sort Available values : date_added, brand, price_high, price_low, priority
      * @param {module:model/WishListItemParameter} opts.item 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
